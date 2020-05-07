@@ -1,10 +1,10 @@
-{% load static wagtailcore_tags %}
+{% load i18n static wagtailcore_tags %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width"/>
-    <title>{{ page.title }} | This Week in Wagtail</title>
+    <title>{{ page.title }} | {% trans "This Week in Wagtail" %}</title>
     <style>
         /**********************************************
         * Ink v1.0.5 - Copyright 2013 ZURB Inc				*
@@ -880,7 +880,7 @@
                           <tr>
                             {% if is_email %}
                               <td class="center">
-                                <a href="{{ page.full_url }}" class="view-online">View this email online</a>
+                                <a href="{{ page.full_url }}" class="view-online">{% trans "View this email online" %}</a>
                               </td>
                             {% endif %}
                             <td class="expander"></td>
@@ -895,7 +895,7 @@
                         <table class="twelve columns">
                           <tr>
                             <td class="twelve sub-columns">
-                              <img src="{{ request.site.url }}{% static 'img/this-week-in-wagtail.png' %}" alt="This Week in Wagtail" />
+                              <img src="{{ request.site.url }}{% static 'img/this-week-in-wagtail.png' %}" alt="{% trans 'This Week in Wagtail' %}" />
                             </td>
                             <td class="expander"></td>
                           </tr>
@@ -937,8 +937,8 @@
                                 <br>
                                 {% if is_email %}
                                     <br>
-                                    Want to change how you receive these emails?<br>
-                                    You can <a href="*|UPDATE_PROFILE|*">update your preferences</a> or <a href="*|UNSUB|*">unsubscribe from this list</a>
+                                    {% trans "Want to change how you receive these emails?" %}<br>
+                                    {% trans 'You can <a href="*|UPDATE_PROFILE|*">update your preferences</a> or <a href="*|UNSUB|*">unsubscribe from this list</a>' %}
                                     <br>
                                     <br>
                                 {% endif %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load i18n wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
 
@@ -10,7 +10,7 @@
         {% if options %}
             <section class="teasers ">
 
-                <h2 class="teasers__main-heading">Wagtail Resources</h2>
+                <h2 class="teasers__main-heading">{% trans "Wagtail Resources" %}</h2>
 
                 <ul class="teasers__container">
                     {% for option in options %}
@@ -27,7 +27,7 @@
 
                 </ul>
 
-            </section> 
+            </section>
 
         {% endif %}
     {% endwith %}

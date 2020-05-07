@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% load static wagtailcore_tags wagtailimages_tags wagtailio_utils %}
+{% load i18n static wagtailcore_tags wagtailimages_tags wagtailio_utils %}
 
 {% block body_class %}template-homepage{% endblock %}
 {% block extra_css %}{% endblock %}
 
 {% block content %}
 
-    <h1>Wagtail Django CMS Homepage</h1>
+    <h1>{% trans "Wagtail Django CMS Homepage" %}</h1>
 
     {% include_block page.body %}
 
@@ -15,7 +15,7 @@
 
         <div class="latest__container">
 
-            <h2 class="latest__heading heading heading--secondary heading--top-border">Latest from the blog</h2>
+            <h2 class="latest__heading heading heading--secondary heading--top-border">{% trans "Latest from the blog" %}</h2>
 
             <div class="latest__content">
 
@@ -39,14 +39,14 @@
                     </article>
                 {% endfor %}
 
-            </div> 
+            </div>
 
         </div>
 
     </section> <!-- /latest -->
 
     {% include "core/includes/contact_torchbox.html" %}
-    
+
 {% endblock %}
 
 {% block extra_js %}

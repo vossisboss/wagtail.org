@@ -1,4 +1,4 @@
-{% load wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
+{% load i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
 
 {% if value.features %}
     <section class="vertical-tabs" >
@@ -25,7 +25,7 @@
 
                 {% if value.all_features_page %}
                     <a href="{% pageurl value.all_features_page %}" class="view-all view-all--light">
-                        Browse all Wagtail's features
+                        {% trans "Browse all Wagtail's features" %}
                         <svg height="30px" width="30px"><use xlink:href="#arrow"></use></svg>
                     </a>
                 {% endif %}
@@ -57,12 +57,12 @@
             {% if value.all_features_page %}
                 <div class="mobile-only">
                     <a href="{% pageurl value.all_features_page %}" class="button view-all view-all--light">
-                        Browse all Wagtail's features
+                        {% trans "Browse all Wagtail's features" %}
                         <svg height="30px" width="30px"><use xlink:href="#arrow"></use></svg>
                     </a>
                 </div>
             {% endif %}
-        
+
         </div>
 
     </section> <!-- /features -->

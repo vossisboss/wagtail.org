@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-07 21:38+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blog/templates/blog/blocks/backers.html:7
+msgid "Gold"
+msgstr ""
+
+#: blog/templates/blog/blocks/backers.html:18
+msgid "Silver"
+msgstr ""
+
+#: blog/templates/blog/blocks/backers.html:29
+msgid "Bronze"
+msgstr ""
+
+#: blog/templates/blog/blocks/backers.html:40
+#: blog/templates/blog/blocks/backers.html:52
+msgid "Other backers"
+msgstr ""
+
+#: blog/templates/blog/blog_page.html:15
+msgid "blog index"
+msgstr ""
+
+#: blog/templates/blog/blog_page.html:16
+msgid "Blog"
+msgstr ""
+
+#: core/templates/core/blocks/home_page_features_block.html:28
+#: core/templates/core/blocks/home_page_features_block.html:60
+msgid "Browse all Wagtail's features"
+msgstr ""
+
+#: core/templates/core/home_page.html:10
+msgid "Wagtail Django CMS Homepage"
+msgstr ""
+
+#: core/templates/core/home_page.html:18
+msgid "Latest from the blog"
+msgstr ""
+
+#: core/templates/core/includes/contact_torchbox.html:4
+msgid "Need an Agency?"
+msgstr ""
+
+#: core/templates/core/includes/contact_torchbox.html:5
+msgid "We\\"
+msgstr ""
+
+#: core/templates/core/includes/contact_torchbox.html:6
+msgid "Contact Torchbox, the creators of Wagtail"
+msgstr ""
+
+#: core/templates/core/includes/share.html:4
+msgid "Share"
+msgstr ""
+
+#: developers/templates/developers/developers_page.html:13
+msgid "Wagtail Resources"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_index_page.html:11
+msgid "This week in Wagtail"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_index_page.html:14
+msgid "A (most) weekly email with updates from the Wagtail core team."
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_index_page.html:29
+msgid "Subscribe to This Week in Wagtail"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_index_page.html:30
+msgid "indicates required"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_index_page.html:32
+msgid "Email Address"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_index_page.html:41
+msgid "Subscribe"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_index_page.html:49
+msgctxt "issues of This Week In Wagtail"
+msgid "Previous issues"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_index_page.html:66
+msgid "Older"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_index_page.html:69
+msgid "There are currently no newsletters"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_page.html:7
+#: newsletter/templates/newsletter/newsletter_page.html:898
+msgid "This Week in Wagtail"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_page.html:883
+msgid "View this email online"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_page.html:940
+msgid "Want to change how you receive these emails?"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_page.html:941
+msgid ""
+"You can <a href=\"*|UPDATE_PROFILE|*\">update your preferences</a> or <a "
+"href=\"*|UNSUB|*\">unsubscribe from this list</a>"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_thanks.html:8
+msgid "Thanks for signing up to our newsletter!"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_thanks.html:10
+#, python-format
+msgid "For more news items check out our <a href=\"%(blog_url)s\">blog</a>"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_thanks.html:12
+msgctxt "Displayed when email address is invalid"
+msgid "Call that an email address?"
+msgstr ""
+
+#: newsletter/templates/newsletter/newsletter_thanks.html:13
+msgid "Your address didn't validate."
+msgstr ""

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static compress wagtailcore_tags wagtailadmin_tags wagtailimages_tags wagtailio_utils %}
+{% load i18n static compress wagtailcore_tags wagtailadmin_tags wagtailimages_tags wagtailio_utils %}
 
 {% block body_class %}template-blog{% endblock %}
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/vendor/code-highlighting.css' %}" />{% endblock %}
@@ -12,8 +12,8 @@
 
         <header class="blog-nav__header">
 
-            <a class="blog-index-button" href="#blog-top">blog index <svg height="15px" width="15px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow"></use></svg></a>
-            <h2>Blog</h2>
+            <a class="blog-index-button" href="#blog-top">{% trans "blog index" %} <svg height="15px" width="15px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow"></use></svg></a>
+            <h2>{% trans "Blog" %}</h2>
 
         </header>
 

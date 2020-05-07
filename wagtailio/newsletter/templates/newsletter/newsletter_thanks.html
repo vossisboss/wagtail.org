@@ -5,11 +5,12 @@
 
 {% block content %}
     {% if success %}
-        <h1>Thanks for signing up to our newsletter!</h1>
-        <p>For more news items check out our <a href="{% slugurl 'blog' %}">blog</a></p>
+        <h1>{% trans "Thanks for signing up to our newsletter!" %}</h1>
+        {% slugurl 'blog' as blog_url %}
+        <p>{% blocktrans with blog_url=blog_url %}For more news items check out our <a href="{{ blog_url }}">blog</a>{% endblocktrans %}</p>
     {% else %}
-        <h1>Call that an email address?</h1>
-        <p>Your address didn't validate.</p>
+        <h1>{% trans "Call that an email address?" context "Displayed when email address is invalid" %}</h1>
+        <p>{% trans "Your address didn't validate." %}</p>
     {% endif %}
 {% endblock %}
 {% block footer %}{% endblock %}
