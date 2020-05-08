@@ -10,12 +10,14 @@ from wagtail.admin.edit_handlers import (
 )
 from wagtail.core.fields import StreamField
 from wagtail.core.models import Orderable, Page
+from wagtail_localize.fields import TranslatableField, SynchronizedField
+from wagtail_localize.models import TranslatableMixin, TranslatablePageMixin
 
 from wagtailio.core.blocks import CodePromoBlock
 from wagtailio.utils.models import CrossPageMixin, SocialMediaMixin
 
 
-class DevelopersPageOptions(Orderable, models.Model):
+class DevelopersPageOptions(TranslatableMixin, Orderable):
     page = ParentalKey("developers.DevelopersPage", related_name="options")
     icon = models.CharField(
         max_length=255,
@@ -48,8 +50,16 @@ class DevelopersPageOptions(Orderable, models.Model):
         ),
     ]
 
+    translatable_fields = [
+        SynchronizedField('icon'),
+        TranslatableField('title'),
+        TranslatableField('summary'),
+        SynchronizedField('internal_link'),
+        SynchronizedField('iconexternal_link'),
+    ]
 
-class DevelopersPage(Page, SocialMediaMixin, CrossPageMixin):
+
+class DevelopersPage(TranslatablePageMixin, SocialMediaMixin, CrossPageMixin, Page):
     body = StreamField(
         (
             (
@@ -62,4 +72,14 @@ class DevelopersPage(Page, SocialMediaMixin, CrossPageMixin):
     content_panels = Page.content_panels + [
         StreamFieldPanel("body"),
         InlinePanel("options", label="Options"),
+    ]
+
+    translatable_fields = SocialMediaMixin.translatable_fields + CrossPageMixin.translatable_fields + [
+        TranslatableField('title'),
+        TranslatableField('slug'),
+        TranslatableField('seo_title'),
+        TranslatableField('search_description'),
+        SynchronizedField('show_in_menus'),
+        TranslatableField('body'),
+        TranslatableField('options'),
     ]

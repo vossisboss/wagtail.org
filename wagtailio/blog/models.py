@@ -7,12 +7,14 @@ from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.snippets.models import register_snippet
+from wagtail_localize.fields import TranslatableField, SynchronizedField
+from wagtail_localize.models import TranslatableMixin, TranslatablePageMixin
 
 from wagtailio.utils.blocks import StoryBlock
 from wagtailio.utils.models import SocialMediaMixin, CrossPageMixin
 
 
-class BlogIndexPage(Page, SocialMediaMixin, CrossPageMixin):
+class BlogIndexPage(TranslatablePageMixin, SocialMediaMixin, CrossPageMixin, Page):
     subpage_types = ["blog.BlogPage"]
 
     def serve(self, request):
@@ -23,9 +25,17 @@ class BlogIndexPage(Page, SocialMediaMixin, CrossPageMixin):
         Page.promote_panels + SocialMediaMixin.panels + CrossPageMixin.panels
     )
 
+    translatable_fields = SocialMediaMixin.translatable_fields + CrossPageMixin.translatable_fields + [
+        TranslatableField('title'),
+        TranslatableField('slug'),
+        TranslatableField('seo_title'),
+        TranslatableField('search_description'),
+        SynchronizedField('show_in_menus'),
+    ]
+
 
 @register_snippet
-class Author(models.Model):
+class Author(TranslatableMixin, models.Model):
     name = models.CharField(max_length=255)
     job_title = models.CharField(max_length=255, blank=True)
     image = models.ForeignKey(
@@ -47,8 +57,15 @@ class Author(models.Model):
         FieldPanel("url"),
     ]
 
+    translatable_fields = [
+        TranslatableField('name'),
+        TranslatableField('job_title'),
+        SynchronizedField('image'),
+        SynchronizedField('url'),
+    ]
 
-class BlogPage(Page, SocialMediaMixin, CrossPageMixin):
+
+class BlogPage(TranslatablePageMixin, SocialMediaMixin, CrossPageMixin, Page):
     subpage_types = []
     canonical_url = models.URLField(blank=True)
     author = models.ForeignKey(
@@ -87,3 +104,17 @@ class BlogPage(Page, SocialMediaMixin, CrossPageMixin):
         + CrossPageMixin.panels
         + [FieldPanel("canonical_url")]
     )
+
+    translatable_fields = SocialMediaMixin.translatable_fields + CrossPageMixin.translatable_fields + [
+        TranslatableField('title'),
+        TranslatableField('slug'),
+        TranslatableField('seo_title'),
+        TranslatableField('search_description'),
+        SynchronizedField('show_in_menus'),
+        SynchronizedField('canonical_url'),
+        SynchronizedField('author'),
+        SynchronizedField('main_image'),
+        SynchronizedField('date'),
+        TranslatableField('introduction'),
+        TranslatableField('body'),
+    ]

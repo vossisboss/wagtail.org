@@ -5,9 +5,11 @@ from django.shortcuts import render
 from wagtail.admin.edit_handlers import FieldPanel
 from wagtail.core.fields import RichTextField
 from wagtail.core.models import Page
+from wagtail_localize.fields import TranslatableField, SynchronizedField
+from wagtail_localize.models import TranslatablePageMixin
 
 
-class NewsletterPage(Page):
+class NewsletterPage(TranslatablePageMixin, Page):
     date = models.DateField("Newsletter date")
     intro = RichTextField(blank=True)
     body = RichTextField()
@@ -18,6 +20,17 @@ class NewsletterPage(Page):
         FieldPanel("body", classname="full"),
     ]
 
+    translatable_fields = [
+        TranslatableField('title'),
+        TranslatableField('slug'),
+        TranslatableField('seo_title'),
+        TranslatableField('search_description'),
+        SynchronizedField('show_in_menus'),
+        SynchronizedField('date'),
+        TranslatableField('intro'),
+        TranslatableField('body'),
+    ]
+
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         if request.GET.get("email", "false") == "true":
@@ -26,7 +39,7 @@ class NewsletterPage(Page):
         return context
 
 
-class NewsletterIndexPage(Page):
+class NewsletterIndexPage(TranslatablePageMixin, Page):
     intro = RichTextField(blank=True)
     body = RichTextField()
 
@@ -61,6 +74,16 @@ class NewsletterIndexPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel("intro", classname="full"),
         FieldPanel("body", classname="full"),
+    ]
+
+    translatable_fields = [
+        TranslatableField('title'),
+        TranslatableField('slug'),
+        TranslatableField('seo_title'),
+        TranslatableField('search_description'),
+        SynchronizedField('show_in_menus'),
+        TranslatableField('intro'),
+        TranslatableField('body'),
     ]
 
 

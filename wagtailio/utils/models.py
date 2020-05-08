@@ -17,9 +17,11 @@ from wagtail.admin.edit_handlers import (
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.edit_handlers import SnippetChooserPanel
 from wagtail.snippets.models import register_snippet
+from wagtail_localize.fields import TranslatableField, SynchronizedField
+from wagtail_localize.models import TranslatableMixin
 
 
-class LinkGroupLink(Orderable, models.Model):
+class LinkGroupLink(TranslatableMixin, Orderable):
     snippet = ParentalKey("LinkGroupSnippet", related_name="links")
     link_URL = models.URLField(help_text="Choose a URL to which to link")
     link_text = models.TextField(help_text="Text of the link")
@@ -31,6 +33,13 @@ class LinkGroupLink(Orderable, models.Model):
         max_length=50,
     )
 
+    translatable_fields = [
+        SynchronizedField('link_URL'),
+        TranslatableField('link_text'),
+        TranslatableField('link_description'),
+        SynchronizedField('link_icon'),
+    ]
+
     panels = [
         FieldPanel("link_URL"),
         FieldPanel("link_text"),
@@ -39,12 +48,17 @@ class LinkGroupLink(Orderable, models.Model):
     ]
 
 
-class LinkGroupSnippet(ClusterableModel):
+@register_snippet
+class LinkGroupSnippet(TranslatableMixin, ClusterableModel):
     name = models.CharField(
         max_length=255,
         help_text="The name of the menu for internal identification e.g 'Primary', 'Footer'.",
     )
     panels = [FieldPanel("name"), InlinePanel("links", label="Links")]
+
+    translatable_fields = [
+        TranslatableField('name'),
+    ]
 
     def __str__(self):
         return self.name
@@ -54,10 +68,7 @@ class LinkGroupSnippet(ClusterableModel):
         ordering = ["name"]
 
 
-register_snippet(LinkGroupSnippet)
-
-
-class MenuSnippetLink(Orderable, models.Model):
+class MenuSnippetLink(TranslatableMixin, Orderable):
     snippet = ParentalKey("MenuSnippet", related_name="links")
     link_page = models.ForeignKey(
         "wagtailcore.Page",
@@ -73,13 +84,24 @@ class MenuSnippetLink(Orderable, models.Model):
 
     panels = [PageChooserPanel("link_page"), FieldPanel("link_text")]
 
+    translatable_fields = [
+        SynchronizedField('link_page'),
+        TranslatableField('link_text'),
+    ]
 
-class MenuSnippet(ClusterableModel):
+
+@register_snippet
+class MenuSnippet(TranslatableMixin, ClusterableModel):
     menu_name = models.CharField(
         max_length=255,
         help_text="The name of the menu for internal identification e.g 'Primary', 'Footer'.",
     )
     panels = [FieldPanel("menu_name"), InlinePanel("links", label="Links")]
+
+    translatable_fields = [
+        TranslatableField('menu_name'),
+        TranslatableField('links'),
+    ]
 
     def __str__(self):
         return self.menu_name
@@ -87,9 +109,6 @@ class MenuSnippet(ClusterableModel):
     class Meta:
         verbose_name = "Menu"
         ordering = ["menu_name"]
-
-
-register_snippet(MenuSnippet)
 
 
 class SocialMediaMixin(models.Model):
@@ -116,6 +135,11 @@ class SocialMediaMixin(models.Model):
         )
     ]
 
+    translatable_fields = [
+        TranslatableField('social_text'),
+        SynchronizedField('social_image'),
+    ]
+
     class Meta:
         abstract = True
 
@@ -139,6 +163,11 @@ class CrossPageMixin(models.Model):
             [FieldPanel("listing_intro"), ImageChooserPanel("listing_image")],
             "Cross-page behaviour",
         )
+    ]
+
+    translatable_fields = [
+        SynchronizedField('listing_image'),
+        TranslatableField('listing_intro'),
     ]
 
     class Meta:

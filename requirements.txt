@@ -18,7 +18,7 @@ django-redis==4.9.0
 django-basic-auth-ip-whitelist==0.2.1
 scout-apm==2.14.1
 django-referrer-policy==1.0
-
+wagtail-localize[google_translate,pofile]==0.4
 
 # Pinned as django-redis has incompatibility with later versions
 redis==2.10.6
