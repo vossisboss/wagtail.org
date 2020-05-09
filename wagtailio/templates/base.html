@@ -1,11 +1,11 @@
-{% load compress static wagtailuserbar wagtailcore_tags wagtailimages_tags wagtailio_utils %}
+{% load i18n compress static wagtailuserbar wagtailcore_tags wagtailimages_tags wagtailio_utils %}
 
 <!doctype html>
 <html lang="en-US">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <title>{% block title %}{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}{% endblock %} {% block title_suffix %}| Wagtail CMS{% endblock %}</title>
+        <title>{% block title %}{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}{% endblock %} {% block title_suffix %}| {% trans "Wagtail CMS" %}{% endblock %}</title>
         <meta name="description" content="{% if page.social_text %}{{ page.social_text }}{% elif page.listing_intro %}{{ page.listing_intro }}{% endif %}" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -24,10 +24,10 @@
         <meta property="og:title" content="{% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %} | Wagtail CMS" />
         <meta property="og:image" content="{% if page.social_image %}{% image page.social_image width-1024 as img %}{{ img.url }}{% else %}{% static 'img/default-sharing-image.png' %}{% endif %}" />
         <meta property="og:description" content="{% if page.social_text %}{{ page.social_text }}{% elif page.listing_intro %}{{ page.listing_intro }}{% endif %}" />
-        <meta property="og:site_name" content="Wagtail CMS" />
+        <meta property="og:site_name" content="{% trans 'Wagtail CMS' %}" />
 
-        <link title="The Wagtail CMS Blog" type="application/atom+xml" rel="alternate" href="{% url 'blog_feed' %}">
-        <link title="This week in Wagtail" type="application/atom+xml" rel="alternate" href="{% url 'newsletter_feed' %}">
+        <link title="{% trans 'The Wagtail CMS Blog' %}" type="application/atom+xml" rel="alternate" href="{% url 'blog_feed' %}">
+        <link title="{% trans 'This week in Wagtail' %}" type="application/atom+xml" rel="alternate" href="{% url 'newsletter_feed' %}">
 
         <link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/favicons/apple-touch-icon-57x57.png' %}"/>
         <link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/favicons/apple-touch-icon-60x60.png' %}"/>
@@ -100,7 +100,7 @@
         {% wagtailuserbar %}
 
         <!--[if lt IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="browserupgrade">{% trans 'You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.' %}</p>
         <![endif]-->
 
         <div class="page">
@@ -108,9 +108,9 @@
             <header class="header">
                 <div class="header__container">
                     <a class="branding" href="/">
-                        <img class="branding__logo" src="{% static "img/wagtail.svg" %}" alt="Wagtail" />
+                        <img class="branding__logo" src="{% static "img/wagtail.svg" %}" alt="{% trans 'Wagtail' %}" />
                     </a>
-                    <a href="#primary_navigation" class="menu-toggle" aria-label="Toggle menu">
+                    <a href="#primary_navigation" class="menu-toggle" aria-label="{% trans 'Toggle menu' %}">
                         <span></span>
                     </a>
                     {% menu_primary %}

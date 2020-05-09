@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-07 21:38+0000\n"
+"POT-Creation-Date: 2020-05-09 23:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,6 +77,7 @@ msgid "Wagtail Resources"
 msgstr ""
 
 #: newsletter/templates/newsletter/newsletter_index_page.html:11
+#: templates/base.html:30
 msgid "This week in Wagtail"
 msgstr ""
 
@@ -148,4 +149,103 @@ msgstr ""
 
 #: newsletter/templates/newsletter/newsletter_thanks.html:13
 msgid "Your address didn't validate."
+msgstr ""
+
+#: templates/404.html:7
+msgid "Page not found"
+msgstr ""
+
+#: templates/404.html:8
+msgid "Sorry, this page could not be found."
+msgstr ""
+
+#: templates/base.html:8 templates/base.html:27
+msgid "Wagtail CMS"
+msgstr ""
+
+#: templates/base.html:29
+msgid "The Wagtail CMS Blog"
+msgstr ""
+
+#: templates/base.html:103
+msgid ""
+"You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
+"browsehappy.com/\">upgrade your browser</a> to improve your experience."
+msgstr ""
+
+#: templates/base.html:111 templates/content.html:11
+msgid "Wagtail"
+msgstr ""
+
+#: templates/base.html:113
+msgid "Toggle menu"
+msgstr ""
+
+#: templates/content.html:12
+msgid "Menu"
+msgstr ""
+
+#: templates/includes/copyright.html:5
+msgid "Wagtail is an open source project by Torchbox."
+msgstr ""
+
+#: templates/includes/follow.html:4
+msgid "Follow"
+msgstr ""
+
+#: templates/includes/follow.html:6
+msgid "Github"
+msgstr ""
+
+#: templates/includes/follow.html:11
+msgid "Twitter"
+msgstr ""
+
+#: templates/includes/follow.html:17
+msgid "# stargazers on GitHub"
+msgstr ""
+
+#: templates/includes/follow.html:17
+msgid "Star Wagtail on GitHub"
+msgstr ""
+
+#: templates/includes/follow.html:17
+msgid "Star"
+msgstr ""
+
+#: templates/includes/latest_blog.html:4
+msgid "Latest blog"
+msgstr ""
+
+#: templates/includes/menu_good_to_go.html:4
+msgid "Good to go?"
+msgstr ""
+
+#: templates/includes/menu_good_to_go.html:5
+msgid ""
+"Everything you need to know about getting your Wagtail build up and running"
+msgstr ""
+
+#: templates/includes/menu_network.html:4
+msgid "Network"
+msgstr ""
+
+#: templates/includes/menu_primary.html:14
+msgid "Documentation"
+msgstr ""
+
+#: templates/includes/newsletter_signup.html:4
+msgid "Stay up to date with Wagtail"
+msgstr ""
+
+#: templates/includes/newsletter_signup.html:6
+msgid "Email address"
+msgstr ""
+
+#: templates/includes/newsletter_signup.html:7
+msgid "Enter your email"
+msgstr ""
+
+#: templates/includes/newsletter_signup.html:8
+msgid "Sign up"
 msgstr ""

@@ -1,7 +1,7 @@
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load i18n wagtailcore_tags wagtailimages_tags %}
 
 <div class="latest-blog">
-	<h2 class="latest-blog__heading footer__heading">Latest blog</h2>
+	<h2 class="latest-blog__heading footer__heading">{% trans "Latest blog" %}</h2>
 	{% if blog %}
         <div class="latest-blog__item">
             <div class="latest-blog__info">

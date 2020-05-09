@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static wagtailcore_tags wagtailio_utils %}
+{% load i18n static wagtailcore_tags wagtailio_utils %}
 
 {% block base_content %}
 
@@ -8,8 +8,8 @@
 
         <header>
             <div class="container">
-                <a id="branding" href="/"><img src="{% static "img/wagtail.svg" %}" alt="Wagtail" /></a>
-                <a href="#primary_navigation">Menu</a>
+                <a id="branding" href="/"><img src="{% static "img/wagtail.svg" %}" alt="{% trans 'Wagtail' %}" /></a>
+                <a href="#primary_navigation">{% trans "Menu" %}</a>
                 {% menu_primary %}
             </div>
         </header>

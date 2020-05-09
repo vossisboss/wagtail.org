@@ -1,8 +1,10 @@
+{% load i18n %}
+
 <form class="newsletter-signup" action="{% url 'newsletter_signup' %}" method="post">
-    <h3 class="newsletter-signup__heading footer__heading">Stay up to date with Wagtail</h3>
+    <h3 class="newsletter-signup__heading footer__heading">{% trans "Stay up to date with Wagtail" %}</h3>
     <fieldset class="newsletter-signup__input-container">
-        <label for="email" class="newsletter-signup__label">Email address</label>
-        <input id="email" name="email" type="email" placeholder="Enter your email" />
-        <button>Sign up</button>
+        <label for="email" class="newsletter-signup__label">{% trans "Email address" %}</label>
+        <input id="email" name="email" type="email" placeholder="{% trans 'Enter your email' %}" />
+        <button>{% trans "Sign up" %}</button>
     </fieldset>
 </form>

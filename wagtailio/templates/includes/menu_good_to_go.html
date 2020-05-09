@@ -1,6 +1,8 @@
+{% load i18n %}
+
 <div class="get-started">
-    <h3 class="get-started__heading footer__heading">Good to go?</h3>
-    <p class="get-started__description">Everything you need to know about getting your Wagtail build up and running</p>
+    <h3 class="get-started__heading footer__heading">{% trans "Good to go?" %}</h3>
+    <p class="get-started__description">{% trans "Everything you need to know about getting your Wagtail build up and running" %}</p>
     {% for link in links %}
         <a href="{{ link.link_URL }}" class="button button--primary button--hover">
             {{ link.link_text }}

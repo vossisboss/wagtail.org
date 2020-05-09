@@ -1,17 +1,19 @@
+{% load i18n %}
+
 <div class="follow-links">
-    <h3 class="follow-links__heading footer__heading">Follow</h3>
+    <h3 class="follow-links__heading footer__heading">{% trans "Follow" %}</h3>
     <div class="follow-links__content">
-        <a class="follow-links__item" href="https://github.com/wagtail/wagtail/" aria-label="Github">
+        <a class="follow-links__item" href="https://github.com/wagtail/wagtail/" aria-label="{% trans 'Github' %}">
             <svg height="28px" width="36px">
                 <use xlink:href="#github"></use>
             </svg>
         </a>
-        <a class="follow-links__item" href="https://twitter.com/wagtailcms" aria-label="Twitter">
+        <a class="follow-links__item" href="https://twitter.com/wagtailcms" aria-label="{% trans 'Twitter' %}">
             <svg height="28px" width="36px" class="twitter">
                 <use xlink:href="#social-twitter"></use>
             </svg>
         </a>
         <!-- Place this tag where you want the button to render. -->
-        <a class="follow-links__item github-button" href="https://github.com/wagtail/wagtail" data-icon="octicon-star" data-style="mega" data-count-href="/wagtail/wagtail/stargazers" data-count-api="/repos/wagtail/wagtail#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Wagtail on GitHub">Star</a>
+        <a class="follow-links__item github-button" href="https://github.com/wagtail/wagtail" data-icon="octicon-star" data-style="mega" data-count-href="/wagtail/wagtail/stargazers" data-count-api="/repos/wagtail/wagtail#stargazers_count" data-count-aria-label="{% trans '# stargazers on GitHub' %}" aria-label="{% trans 'Star Wagtail on GitHub' %}">{% trans "Star" %}</a>
     </div>
-</div> 
+</div>
