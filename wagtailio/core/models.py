@@ -6,14 +6,14 @@ from wagtail.core.fields import StreamField
 from wagtail.core.models import Page, Orderable
 from wagtail.admin.edit_handlers import StreamFieldPanel
 from wagtail_localize.fields import TranslatableField, SynchronizedField
-from wagtail_localize.models import TranslatablePageMixin
+from wagtail_localize.models import TranslatablePageMixin, TranslatablePageRoutingMixin
 
 from wagtailio.blog.models import BlogPage
 from wagtailio.core.blocks import HomePageBlock
 from wagtailio.utils.models import SocialMediaMixin, CrossPageMixin
 
 
-class HomePage(TranslatablePageMixin, SocialMediaMixin, CrossPageMixin, Page):
+class HomePage(TranslatablePageMixin, TranslatablePageRoutingMixin, SocialMediaMixin, CrossPageMixin, Page):
     body = StreamField(HomePageBlock())
     parent_page_types = ["wagtailcore.Page"]
     subpage_types = [
