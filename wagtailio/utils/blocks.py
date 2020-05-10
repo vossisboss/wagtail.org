@@ -28,6 +28,9 @@ from wagtail.embeds.blocks import EmbedBlock
 class BackgroundColourChoiceBlock(FieldBlock):
     field = forms.ChoiceField(choices=(("red", "Red"), ("white", "White")))
 
+    def get_translatable_segments(self, value):
+        return []
+
 
 class ImageFormatChoiceBlock(FieldBlock):
     field = forms.ChoiceField(
@@ -39,14 +42,22 @@ class ImageFormatChoiceBlock(FieldBlock):
         )
     )
 
+    def get_translatable_segments(self, value):
+        return []
+
 
 class SimpleImageFormatChoiceBlock(FieldBlock):
     field = forms.ChoiceField(choices=(("left", "Left"), ("right", "Right")))
+
+    def get_translatable_segments(self, value):
+        return []
 
 
 class HTMLAlignmentChoiceBlock(FieldBlock):
     field = forms.ChoiceField(choices=(("normal", "Normal"), ("full", "Full width")))
 
+    def get_translatable_segments(self, value):
+        return []
 
 # New blocks
 
