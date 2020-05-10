@@ -1,6 +1,7 @@
 from django.urls import include, path
 from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.views.decorators.cache import never_cache
 from django.views.decorators.vary import vary_on_headers
@@ -49,7 +50,7 @@ if settings.DEBUG:
 urlpatterns = decorate_urlpatterns(urlpatterns, get_default_cache_control_decorator())
 
 
-urlpatterns = private_urlpatterns + urlpatterns + [path("", include(wagtail_urls))]
+urlpatterns = private_urlpatterns + urlpatterns + i18n_patterns(path("", include(wagtail_urls)))
 
 # Set vary header to instruct cache to serve different version on different
 # cookies, different request method (e.g. AJAX) and different protocol
